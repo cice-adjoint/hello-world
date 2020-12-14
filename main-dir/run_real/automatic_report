@@ -1,0 +1,20 @@
+#!/bin/csh -f 
+
+#clear 
+echo "!################################### "
+echo "the current directory is :"
+pwd
+echo "! "
+
+#echo "the result of the latest run is :"
+#ls -l slurm-1* | cut -c45-61 | sort > slurm-loglist.txt; tail -n 2 `tail -n 1 slurm-loglist.txt`
+#ll icepack.runlog.* | cut -c50-77 | sort > icepack.runloglist.txt ; tail -n 2 `tail -n 1 icepack.runloglist.txt`
+#echo "! "
+
+echo "the end of the latest runlog is :"
+ls ./logs/icepack.runlog.* | sort > icepack.runloglist.txt; tail -n 2 `tail -n 1 icepack.runloglist.txt`
+echo "!################################### "
+
+echo "opening the latest runlog ..."
+
+vi `tail -n 1 icepack.runloglist.txt`
