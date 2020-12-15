@@ -1,0 +1,7 @@
+#!/bin/csh -f 
+echo  'pwd'
+pwd
+echo 'cp ../build_pond/icepack .'
+cp ../build_pond/icepack .
+echo './icepack.submit'
+./icepack.submit

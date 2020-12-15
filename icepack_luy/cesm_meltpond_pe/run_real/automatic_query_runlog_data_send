@@ -1,0 +1,64 @@
+#!/bin/sh -f 
+# save parameter estimation results to text file for future using
+# 
+
+clear 
+
+# find the newest runlog file
+ls ./icepack.runlog.* | sort > icepack.runloglist.txt
+latest_logfile=`tail -n 1 icepack.runloglist.txt`
+echo $latest_logfile
+
+# extract useful data from the runlog file
+iflag=$(grep "IFLAG" $latest_logfile | cut -f 2 -d"=" | sed 's/ //g')
+echo $iflag
+
+
+# know about how many iterations has been done
+# iternum=$(sed -n " ` grep -n "I   NFN    FUNC        GNORM       STEPLENGTH" $latest_logfile | awk -F ":" '{print $1}' | tail -n 1 `,+2p " $latest_logfile | tail -n 1 | awk -F " " '{print $1}' )
+# echo $iternum 
+
+
+sed -n " `grep -n "FINAL POINT X=" $latest_logfile | awk -F ":" '{print $1}'`,+1p " $latest_logfile | tail -n 1 >> finalX.txt
+ 
+# extract X.txt
+rm -rf X.txt
+iternum=$( grep -n "VECTOR X=" $latest_logfile | wc -l )
+for ii in $(seq 1 $iternum)
+do
+  sed -n " ` grep -n "VECTOR X=" $latest_logfile | awk -F ":" '{print $1}' | head -n $ii | tail -n 1 `,+1p " $latest_logfile | tail -n 1 >> X.txt
+done
+
+sed -n " ` grep -n "FINAL POINT X=" $latest_logfile | awk -F ":" '{print $1}' `,+1p " $latest_logfile | tail -n 1 >> X.txt
+
+
+# extract J.txt
+rm -rf J.txt
+iternum=$(sed -n " ` grep -n "I   NFN    FUNC        GNORM       STEPLENGTH" $latest_logfile | awk -F ":" '{print $1}' | tail -n 1 `,+2p " $latest_logfile | tail -n 1 | awk -F " " '{print $1}' )
+
+sed -n " `grep -n "F=" $latest_logfile | awk -F ":" '{print $1}'` p" $latest_logfile | awk -F "=" '{print $2}' | awk -F " " '{print $1}' >> J.txt
+
+for ii in $(seq 2 $iternum)
+do
+  sed -n " ` grep -n "I   NFN    FUNC        GNORM       STEPLENGTH" $latest_logfile | awk -F ":" '{print $1}' | head -n $ii | tail -n 1 `,+2p " $latest_logfile | tail -n 1 | awk -F " " '{print $3}' >> J.txt
+done
+
+
+# extract GNORM.txt
+rm -rf GNORM.txt
+iternum=$(sed -n " ` grep -n "I   NFN    FUNC        GNORM       STEPLENGTH" $latest_logfile | awk -F ":" '{print $1}' | tail -n 1 `,+2p " $latest_logfile | tail -n 1 | awk -F " " '{print $1}' )
+
+sed -n " `grep -n "F=" $latest_logfile | awk -F ":" '{print $1}'` p" $latest_logfile | awk -F "=" '{print $3}' >> GNORM.txt
+
+for ii in $(seq 2 $iternum)
+do
+  sed -n " ` grep -n "I   NFN    FUNC        GNORM       STEPLENGTH" $latest_logfile | awk -F ":" '{print $1}' | head -n $ii | tail -n 1 `,+2p " $latest_logfile | tail -n 1 | awk -F " " '{print $4}' >> GNORM.txt
+done
+
+
+# send data
+sz J.txt
+sz GNORM.txt
+sz X.txt
+
+

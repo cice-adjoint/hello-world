@@ -1,0 +1,11 @@
+#!/bin/csh -f 
+
+clear 
+cd ../build_jra ; 
+# ./build_driver2.sh ; 
+make clean ;
+make icepack;
+cd ../run_jra ; 
+./automatic_formalrun; 
+./automatic_report
+

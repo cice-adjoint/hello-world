@@ -1,0 +1,57 @@
+#!/bin/sh -f
+
+datelist=("05-09" "05-17" "05-25" "06-02" "06-10" "06-18" "06-26" "07-04" "07-12" "07-20" "07-28" "08-05" "08-13" "08-21" "08-29" "09-06" "09-14" "09-22")
+
+# change integration time  in icepack_in
+sed -i "7c      npt            = 3072 " ./icepack_in ;
+# change restart flag  in icepack_in
+sed -i "10c      restart        = .false." ./icepack_in ;
+
+# change first-guess  in icedrv_MAIN.F90
+sed -i "255c      X  = 0.8_dbl_kind " ../build_real/driver/icedrv_MAIN.F90 ;
+# run
+bash ./automatic_buildandrun_fast;    
+
+
+rm -f pndaspect.txt
+
+# Begin loops
+for i in $(seq 0 15)
+do
+{
+# change ic in icepack_in
+    sed -i "9c      ice_ic         = './restart/iced.2005-"${datelist[$i]}"-00000' " ./icepack_in;
+# change integration time  in icepack_in
+    sed -i "7c      npt            = 192 " ./icepack_in ;
+# change restart flag  in icepack_in
+    sed -i "10c      restart        = .true." ./icepack_in ;
+# change J calc time  in icedrv_MAIN.F90
+    sed -i "388c      do i = 3072+192*$i, 3072+192*($i+1) ,1 " ../build_real/driver/icedrv_MAIN.F90 ;
+# change adj backward integration time  in icedrv_MAIN.F90
+    sed -i "462c      do istep1 = 3072+192*($i+1), 3072+192*$i, -1 " ../build_real/driver/icedrv_MAIN.F90 ;
+# change G calc time  in icedrv_MAIN.F90
+    sed -i "558c       G = ad_pndaspect_timeseries (3072+192*$i) " ../build_real/driver/icedrv_MAIN.F90 ;
+
+# build and run
+bash ./automatic_buildandrun_fast;    
+# query runlog data
+bash ./automatic_query_runlog_data2
+
+# get X.last
+X=`tail -n 1 X.txt`
+flag=$(echo "$X <= 0" | bc)
+
+if [ $flag = 1 ]; then
+  echo "0.80000000000000" >> pndaspect.txt
+else
+  tail -n 1 X.txt >> pndaspect.txt
+fi
+
+
+}
+done
+# End loops
+
+# send data
+sz pndaspect.txt
+sz ap_o.txt

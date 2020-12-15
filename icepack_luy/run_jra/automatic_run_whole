@@ -1,0 +1,24 @@
+#!/bin/sh -f
+
+
+# 0101-0101 integration
+# change integration time  in icepack_in
+  sed -i "7c      npt            = 8760 " ./icepack_in ;
+# change restart flag  in icepack_in
+  sed -i "10c      restart        = .false." ./icepack_in ;
+# change pndaspect  in icepack_in
+  sed -i "69c      pndaspect         = 0.8 " ./icepack_in ;
+# run
+  ./automatic_formalrun ;
+    ./automatic_query_data
+# rename ap_g.txt and hp_g.txt
+    ii="_0_8" ;
+    mv ap_g.txt ap_g$ii.txt ;
+    mv hp_g.txt hp_g$ii.txt ;
+    mv sea_ice_concentration.txt sea_ice_concentration$ii.txt ;
+    mv icethickness.txt icethickness$ii.txt ;
+# send ap_g.txt and hp_g.txt
+    sz ap_g$ii.txt ;
+    sz hp_g$ii.txt ;
+    sz sea_ice_concentration$ii.txt ;
+    sz icethickness$ii.txt ;

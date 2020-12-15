@@ -1,0 +1,8 @@
+#!/bin/csh -f 
+
+echo "the current directory is :"
+
+pwd
+cp ../build/icepack .
+ls icepack
+./icepack.submit.debug

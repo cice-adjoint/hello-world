@@ -1,0 +1,4 @@
+#!/bin/csh -f 
+
+vi ice_diag.full_ITD
+./timeseries.csh ./ice_diag.full_ITD

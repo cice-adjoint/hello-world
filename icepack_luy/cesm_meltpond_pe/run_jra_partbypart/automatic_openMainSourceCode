@@ -1,0 +1,3 @@
+#!/bin/csh -f 
+
+vi ../build_jra_partbypart/driver/icedrv_MAIN.F90

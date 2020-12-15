@@ -1,0 +1,14 @@
+#!/bin/csh -f 
+
+#clear 
+echo "!################################### "
+#echo "the current directory is :"
+#pwd
+echo "! "
+echo "the end of the latest runlog is :"
+ls icepack.runlog.* | sort > icepack.runloglist.txt; tail -n 2 `tail -n 1 icepack.runloglist.txt`
+echo "!################################### "
+
+echo "opening the latest runlog ..."
+
+vi `tail -n 1 icepack.runloglist.txt`

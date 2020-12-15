@@ -1,0 +1,8 @@
+#!/bin/csh -f 
+echo  "pwd:$PWD"
+
+echo 'cp ../build_real/icepack .'
+cp ../build_real/icepack .
+
+echo './icepack.submit'
+./icepack.submit

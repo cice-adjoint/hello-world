@@ -1,0 +1,92 @@
+Tue Jun 18 16:15:02 CST 2019 ./icepack.submit: case job submitted
+Sat Jun 22 10:53:08 CST 2019 ./icepack.submit: case job submitted
+Sat Jun 22 10:53:30 CST 2019 /tmp/slurmd/job1716010/slurm_script: run_driver2 run completed icepack.runlog.190622-105327
+Fri Jun 28 16:47:31 CST 2019 ./icepack.submit: case job submitted
+Fri Jun 28 16:56:00 CST 2019 ./icepack.submit: case job submitted
+Fri Jun 28 16:56:11 CST 2019 /tmp/slurmd/job1725038/slurm_script: run_driver_std run completed icepack.runlog.190628-165607
+Mon Jul 22 10:41:02 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 22 10:41:23 CST 2019 /tmp/slurmd/job1755842/slurm_script: run run completed icepack.runlog.190722-104118
+Mon Jul 22 10:53:31 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 22 10:57:13 CST 2019 /tmp/slurmd/job1755882/slurm_script: run run completed icepack.runlog.190722-105400
+Mon Jul 22 12:20:07 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 22 12:23:31 CST 2019 /tmp/slurmd/job1756036/slurm_script: run run completed icepack.runlog.190722-122016
+Mon Jul 22 12:46:34 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 22 12:49:58 CST 2019 /tmp/slurmd/job1756050/slurm_script: run run completed icepack.runlog.190722-124719
+Tue Jul 23 09:58:36 CST 2019 ./icepack.submit: case job submitted
+Tue Jul 23 10:02:05 CST 2019 /tmp/slurmd/job1757319/slurm_script: run run did NOT complete icepack.runlog.190723-095846
+Tue Jul 23 15:36:08 CST 2019 ./icepack.submit: case job submitted
+Tue Jul 23 17:03:51 CST 2019 ./icepack.submit: case job submitted
+Tue Jul 23 17:31:14 CST 2019 /tmp/slurmd/job1757896/slurm_script: run run completed icepack.runlog.190723-170416
+Tue Jul 23 21:04:46 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 29 14:02:23 CST 2019 ./icepack.submit: case job submitted
+Mon Jul 29 15:13:06 CST 2019 ./icepack.submit.debug: case job submitted
+Mon Jul 29 16:10:24 CST 2019 /tmp/slurmd/job1762756/slurm_script: run run completed icepack.runlog.190729-151309
+Tue Jul 30 17:07:21 CST 2019 ./icepack.submit.debug: case job submitted
+Tue Jul 30 17:44:37 CST 2019 /tmp/slurmd/job1763837/slurm_script: run run completed icepack.runlog.190730-170750
+Wed Jul 31 09:50:52 CST 2019 ./icepack.submit: case job submitted
+Wed Jul 31 14:12:49 CST 2019 ./icepack.submit: case job submitted
+Wed Jul 31 16:53:09 CST 2019 ./icepack.submit.debug: case job submitted
+Wed Jul 31 17:32:34 CST 2019 /tmp/slurmd/job1764663/slurm_script: run run completed icepack.runlog.190731-165317
+Sat Aug  3 16:04:50 CST 2019 ./icepack.submit: case job submitted
+Sat Aug  3 17:50:25 CST 2019 ./icepack.submit.debug: case job submitted
+Sat Aug  3 17:54:40 CST 2019 ./icepack.submit.debug: case job submitted
+Sat Aug  3 18:33:14 CST 2019 /tmp/slurmd/job1766502/slurm_script: run run did NOT complete icepack.runlog.190803-175453
+Sat Aug  3 20:38:42 CST 2019 ./icepack.submit.debug: case job submitted
+Sat Aug  3 21:25:14 CST 2019 /tmp/slurmd/job1766600/slurm_script: run run did NOT complete icepack.runlog.190803-203844
+Sun Aug  4 08:46:13 CST 2019 ./icepack.submit.debug: case job submitted
+Sun Aug  4 14:09:02 CST 2019 ./icepack.submit: case job submitted
+Sun Aug  4 14:21:09 CST 2019 ./icepack.submit: case job submitted
+Sun Aug  4 14:46:23 CST 2019 /tmp/slurmd/job1767034/slurm_script: run run completed icepack.runlog.190804-142112
+Sun Aug  4 18:24:40 CST 2019 ./icepack.submit: case job submitted
+Sun Aug  4 19:08:04 CST 2019 /tmp/slurmd/job1767164/slurm_script: run run completed icepack.runlog.190804-182446
+Tue Aug 20 16:11:42 CST 2019 ./icepack.submit.debug: case job submitted
+Tue Aug 20 17:32:12 CST 2019 ./icepack.submit.debug: case job submitted
+Tue Aug 20 17:55:36 CST 2019 /tmp/slurmd/job1782167/slurm_script: run run completed icepack.runlog.190820-173214
+2019年 10月 01日 星期二 17:21:19 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:23:50 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:25:45 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:29:16 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:30:20 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:34:33 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:40:00 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run did NOT complete icepack.runlog.191001-174000
+2019年 10月 01日 星期二 17:40:00 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:41:40 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run did NOT complete icepack.runlog.191001-174140
+2019年 10月 01日 星期二 17:41:40 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 17:42:23 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run did NOT complete icepack.runlog.191001-174223
+2019年 10月 01日 星期二 17:42:23 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 18:11:13 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191001-180657
+2019年 10月 01日 星期二 18:11:13 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 19:00:38 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191001-185745
+2019年 10月 01日 星期二 19:00:38 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 20:59:21 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191001-205901
+2019年 10月 01日 星期二 20:59:21 CST ./icepack.submit: case job submitted
+2019年 10月 01日 星期二 22:01:45 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191001-215952
+2019年 10月 01日 星期二 22:01:45 CST ./icepack.submit: case job submitted
+2019年 10月 02日 星期三 16:00:20 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191002-160014
+2019年 10月 02日 星期三 16:00:20 CST ./icepack.submit: case job submitted
+2019年 10月 02日 星期三 16:10:07 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191002-161001
+2019年 10月 02日 星期三 16:10:07 CST ./icepack.submit: case job submitted
+2019年 10月 02日 星期三 17:14:51 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191002-171445
+2019年 10月 02日 星期三 17:14:51 CST ./icepack.submit: case job submitted
+2019年 10月 02日 星期三 23:37:49 CST ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.191002-233743
+2019年 10月 02日 星期三 23:37:49 CST ./icepack.submit: case job submitted
+Fri Jan 10 21:34:28 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200110-213415
+Fri Jan 10 21:34:28 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 13:20:20 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-132007
+Sun Jan 12 13:20:20 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 13:28:05 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-132752
+Sun Jan 12 13:28:05 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 15:27:09 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-152656
+Sun Jan 12 15:27:09 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 15:29:20 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-152907
+Sun Jan 12 15:29:20 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 15:34:17 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-153404
+Sun Jan 12 15:34:17 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 15:43:35 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-154322
+Sun Jan 12 15:43:35 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 16:19:54 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-161940
+Sun Jan 12 16:19:54 CST 2020 ./icepack.submit: case job submitted
+Sun Jan 12 18:02:49 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200112-180235
+Sun Jan 12 18:02:49 CST 2020 ./icepack.submit: case job submitted
+Mon Jan 13 17:18:12 CST 2020 ./icepack.run: /home/luy/icepack/producing_intermediate_forcing/run run completed icepack.runlog.200113-171800
+Mon Jan 13 17:18:12 CST 2020 ./icepack.submit: case job submitted

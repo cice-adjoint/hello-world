@@ -1,0 +1,5 @@
+#!/bin/sh -f
+
+lon=90; lat=78;
+jra_file="jra55_2005_"$lon"_"$lat"_01hr.txt"
+sed -i "96c            atm_data_file   = '$jra_file' " ./icepack_in

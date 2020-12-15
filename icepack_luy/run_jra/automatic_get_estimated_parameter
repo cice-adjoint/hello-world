@@ -1,0 +1,20 @@
+#!/bin/sh -f
+
+sed -i "5c             pndaspect_list=\
+(`head -n 1 pndaspect.txt | tail -n 1` \
+`head -n 2 pndaspect.txt | tail -n 1`  \
+`head -n 3 pndaspect.txt | tail -n 1`  \
+`head -n 4 pndaspect.txt | tail -n 1`  \
+`head -n 5 pndaspect.txt | tail -n 1`   \
+`head -n 6 pndaspect.txt | tail -n 1`    \
+`head -n 7 pndaspect.txt | tail -n 1`   \
+`head -n 8 pndaspect.txt | tail -n 1`   \
+`head -n 9 pndaspect.txt | tail -n 1`  \
+`head -n 10 pndaspect.txt | tail -n 1`  \
+`head -n 11 pndaspect.txt | tail -n 1`  \
+`head -n 12 pndaspect.txt | tail -n 1`  \
+`head -n 13 pndaspect.txt | tail -n 1`  \
+`head -n 14 pndaspect.txt | tail -n 1`   \
+`head -n 15 pndaspect.txt | tail -n 1`   \
+`head -n 16 pndaspect.txt | tail -n 1`   \
+0.8)"  ./automatic_run_partbypart

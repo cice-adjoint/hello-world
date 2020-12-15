@@ -1,0 +1,18 @@
+#!/bin/csh -f 
+
+# This line is used to auto-change the value of ICE_CASENAME in icepack.settings 
+sed " /setenv ICE_CASENAME/c setenv ICE_CASENAME  ` echo $PWD | awk -F '/' '{print $NF}' ` " icepack.settings | head -n 5
+# it can be run step by step as:
+#1  echo $PWD
+#2  echo $PWD | awk -F '/' '{print     $NF}'
+#3  sed " /setenv ICE_CASENAME/c setenv ICE_CASENAME  ` echo $PWD | awk -F '/' '{print     $NF}' ` " icepack.settings
+#4  sed " /setenv ICE_CASENAME/c setenv ICE_CASENAME  ` echo $PWD | awk -F '/' '{print     $NF}' ` " icepack.settings | head -n 5
+# as it becomes more and more complex ,it becomes more and more powerful
+sed " /setenv ICE_MACHINE/c setenv ICE_MACHINE  xcwang59 " icepack.settings | head -n 10
+sed " /setenv ICE_MACHCOMP/c setenv ICE_MACHCOMP  xcwang59_intel " icepack.settings | head -n 10
+sed " /setenv ICE_SCRIPTS/c setenv ICE_SCRIPTS  /home/luy/icepack/Icepack/configuration/scripts " icepack.settings | head -n 10
+
+
+sed -i " /setenv ICE_CASENAME/c setenv ICE_CASENAME  ` echo $PWD | awk -F '/' '{print     $NF}' ` " icepack.settings | head -n 5 icepack.settings
+chmod +x icepack.run
+chmod +x icepack.submit
