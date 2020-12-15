@@ -1,8 +1,0 @@
-#!/bin/sh -f 
-
-# send data
-sz J.txt
-sz GNORM.txt
-sz X.txt
-sz G.txt
-

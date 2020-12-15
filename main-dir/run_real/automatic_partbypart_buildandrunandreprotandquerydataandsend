@@ -1,9 +1,0 @@
-#!/bin/csh -f 
-
-clear 
-
-vi icepack_in ; vi ../build_real/driver/icedrv_MAIN.F90;
-./automatic_buildandrunandreport_fast; 
-bash automatic_query_runlog_data2;
-# sz ap_g_*.txt;
-

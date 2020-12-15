@@ -1,6 +1,0 @@
-#!/bin/csh -f 
-
-#yhbatch -n 1 -p TH_HPC1 ./icepack.run
-./icepack.run
-echo "`date` ${0}: case job submitted"  >> ./README.case
-

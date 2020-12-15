@@ -1,4 +1,0 @@
-#!/bin/csh -f 
-
-./timeseries.csh ./ice_diag.full_ITD
-

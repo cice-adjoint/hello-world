@@ -1,6 +1,0 @@
-#!/bin/sh -f 
-
-mv icepack.runlog.* results/
-mv ap_g_0000* results/
-mv hp_g_0000* results/
-mv ad*.txt results/
