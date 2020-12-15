@@ -1,0 +1,5 @@
+#!/bin/csh -f 
+
+clear 
+cd ../build ; ./build_driver2.sh ; cd ../run ; ./automatic_formalrun; ./automatic_report
+

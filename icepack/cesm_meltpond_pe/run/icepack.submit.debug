@@ -1,0 +1,6 @@
+#!/bin/csh -f 
+
+#yhbatch -n 1 -p debug ./icepack.run
+./icepack.run
+echo "`date` ${0}: case job submitted"  >> ./README.case
+

@@ -1,0 +1,35 @@
+#!/bin/sh -f
+
+ 
+rm -rf melttn1.txt
+rm -rf melttn2.txt
+rm -rf melttn3.txt
+rm -rf melttn4.txt
+rm -rf melttn5.txt
+
+for istep in $(seq 1 8760)
+do
+
+ if [ $istep -lt 10 ]
+ then
+ file="melttn00000"$istep".txt"
+ elif [ $istep -lt 100 ]
+ then
+ file="melttn0000"$istep".txt"
+ elif [ $istep -lt 1000 ]
+ then
+ file="melttn000"$istep".txt"
+ else
+ file="melttn00"$istep".txt"
+ fi
+ 
+ echo $file
+
+ #cat ../intermediate_forcing_data/dir2/$file
+ sed -n '1p' ../intermediate_forcing_data/dir2/$file | cut -c7-17 >> melttn1.txt
+ sed -n '2p' ../intermediate_forcing_data/dir2/$file | cut -c7-17 >> melttn2.txt
+ sed -n '3p' ../intermediate_forcing_data/dir2/$file | cut -c7-17 >> melttn3.txt
+ sed -n '4p' ../intermediate_forcing_data/dir2/$file | cut -c7-17 >> melttn4.txt
+ sed -n '5p' ../intermediate_forcing_data/dir2/$file | cut -c7-17 >> melttn5.txt
+
+done

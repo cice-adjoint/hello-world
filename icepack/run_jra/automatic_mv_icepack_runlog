@@ -1,0 +1,3 @@
+#!/bin/sh -f 
+
+mv icepack.runlog.* results/

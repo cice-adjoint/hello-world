@@ -1,0 +1,19 @@
+#!/bin/sh -f 
+
+istep="5000"
+
+echo "melttn"
+file="melttn00"$istep".txt"
+
+
+cat ../intermediate_forcing_data/dir2/"melttn00$istep.txt"
+echo "meltsn"
+cat ../intermediate_forcing_data/dir2/"meltsn00$istep.txt"
+echo "aicen"
+cat ../intermediate_forcing_data/dir2/"aicen00$istep.txt"
+echo "vicen"
+cat ../intermediate_forcing_data/dir2/"vicen00$istep.txt"
+echo "Tsfc"
+cat ../intermediate_forcing_data/dir2/"Tsfc00$istep.txt"
+echo "frain"
+cat ../intermediate_forcing_data/dir2/"frain00$istep.txt"

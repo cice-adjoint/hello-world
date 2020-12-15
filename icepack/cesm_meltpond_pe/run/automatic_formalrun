@@ -1,0 +1,13 @@
+#!/bin/csh -f 
+beginTime=`date +%s`
+echo "参数估计 开始执行,当前时间:" `date "+%Y-%m-%d %H:%M:%S"`
+echo "-----------------------------------------------------------"
+cp ../build/icepack .
+
+echo './icepack.submit'
+./icepack.submit
+
+echo "参数估计 执行完成,当前时间:" `date "+%Y-%m-%d %H:%M:%S"`
+endTime=`date +%s`
+echo "-----------------------------------------------------------"
+echo "总共耗时:" $(($endTime-$beginTime)) "秒"

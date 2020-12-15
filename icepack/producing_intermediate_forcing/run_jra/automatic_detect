@@ -1,0 +1,9 @@
+#!/bin/csh -f 
+
+echo "the current directory is :"
+
+pwd
+ls -l slurm-17* | cut -c45-61 | sort > slurm-loglist.txt; tail -n 2 `tail -n 1 slurm-loglist.txt`
+#ll icepack.runlog.* | cut -c50-77 | sort > icepack.runloglist.txt ; tail -n 2 `tail -n 1 icepack.runloglist.txt`
+
+ls icepack.runlog.* | sort > icepack.runloglist.txt; tail -n 2 `tail -n 1 icepack.runloglist.txt`

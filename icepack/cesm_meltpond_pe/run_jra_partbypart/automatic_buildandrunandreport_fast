@@ -1,0 +1,9 @@
+#!/bin/csh -f 
+
+clear 
+cd ../build_jra_partbypart ; 
+ ./build_driver2_fast.sh ; 
+cd ../run_jra_partbypart ; 
+./automatic_formalrun; 
+./automatic_report
+

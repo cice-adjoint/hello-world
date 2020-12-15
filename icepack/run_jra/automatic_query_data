@@ -1,0 +1,10 @@
+#!/bin/csh -f 
+grep "area fraction          =" ice_diag.full_ITD | cut -c33-51 > sea_ice_concentration.txt
+grep "avg ice thickness (m)  =" ice_diag.full_ITD | cut -c33-51 > icethickness.txt
+grep "pond area fraction      =" ice_diag.full_ITD | cut -c33-51 >pond_area_fraction.txt
+grep "pond depth              =" ice_diag.full_ITD | cut -c33-51 >pond_depth.txt
+
+sz sea_ice_concentration.txt
+sz icethickness.txt
+sz pond_area_fraction.txt
+sz pond_depth.txt

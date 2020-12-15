@@ -1,0 +1,43 @@
+#!/bin/sh -f 
+# save parameter estimation results to text file for future using
+
+clear 
+
+# find the newest runlog file
+ls ./icepack.runlog.* | sort > icepack.runloglist.txt
+latest_logfile=`tail -n 1 icepack.runloglist.txt`
+echo "the newest runlog is $latest_logfile"
+
+# extract useful data from the runlog file
+iflag=$(grep "IFLAG" $latest_logfile | cut -f 2 -d"=" | sed 's/ //g')
+echo "the state is $iflag"
+
+ 
+# extract X.txt
+rm -rf X.txt
+grep "X =" $latest_logfile | awk -F " " '{print $3}' >> X.txt
+
+
+
+# extract J.txt
+rm -rf J.txt
+grep "J =" $latest_logfile | awk -F " " '{print $3}' >> J.txt
+
+
+
+# extract GNORM.txt
+rm -rf G.txt
+grep "G =" $latest_logfile | awk -F " " '{print $3}' >> G.txt
+
+# show data
+echo "X.txt"
+cat X.txt
+echo "J.txt"
+cat J.txt
+echo "G.txt"
+cat G.txt
+
+# send data
+sz X.txt
+sz J.txt
+sz G.txt

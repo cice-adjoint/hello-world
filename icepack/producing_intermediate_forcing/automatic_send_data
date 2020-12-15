@@ -1,0 +1,7 @@
+#!/bin/sh -f 
+sz melttn1.txt
+sz melttn2.txt
+sz melttn3.txt
+sz melttn4.txt
+sz melttn5.txt
+

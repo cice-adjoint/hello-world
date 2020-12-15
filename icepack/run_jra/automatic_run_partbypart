@@ -1,0 +1,91 @@
+#!/bin/sh -f
+
+datelist=("05-09" "05-17" "05-25" "06-02" "06-10" "06-18" "06-26" "07-04" "07-12" "07-20" "07-28" "08-05" "08-13" "08-21" "08-29" "09-06" "09-14" "09-22")
+
+pndaspect_list=(3.124968830427899E-003 0.630776858010427  10.3686015036408  1.09446851232263  1.01164368985990   10.6641266497595    11.1470728807476   11.1819388822589   11.0603816994248  10.9415783956467  11.1500143553788  11.6760400459802  10.2663809306399  12.0127415132295   12.2063283002531   11.7004518687448   0.8)
+
+#pndaspect_list=(0.7	3.94E-03	6.91E-02	0.128805843	0.169799519	9.62E-02	0.121577233	0.277610409	0.7	2.26E-02	0.126309167	7.00E-02	0.699999989	0.699999891	0.7	0.7)
+
+#pndaspect_list=(0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7	0.7)
+
+#pndaspect_list=(0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8	0.8)
+
+
+
+# 0101-0509 integration
+# change integration time  in icepack_in
+  sed -i "7c      npt            = 3072 " ./icepack_in ;
+# change restart flag  in icepack_in
+  sed -i "10c      restart        = .false." ./icepack_in ;
+# change pndaspect  in icepack_in
+  sed -i "69c      pndaspect         = 0.8 " ./icepack_in ;
+# run
+  ./automatic_formalrun ;
+    ./automatic_query_data
+
+# rename ap_g.txt and hp_g.txt
+    let ii=0 ;
+    mv ap_g.txt ap_g"$ii".txt ;
+    mv hp_g.txt hp_g"$ii".txt ;
+    mv sea_ice_concentration.txt sea_ice_concentration"$ii".txt ;
+    mv icethickness.txt icethickness"$ii".txt ;
+# send ap_g.txt and hp_g.txt
+    sz ap_g"$ii".txt ;
+    sz hp_g"$ii".txt ;
+    sz sea_ice_concentration"$ii".txt ;
+    sz icethickness"$ii".txt ;
+
+
+# 0509-0906 part integration
+# Begin loops
+for i in $(seq 0 16)
+do
+
+# change ic in icepack_in
+    sed -i "9c      ice_ic         = './restart/iced.2005-"${datelist[$i]}"-00000' " ./icepack_in;
+# change restart flag  in icepack_in
+  sed -i "10c      restart        = .true." ./icepack_in ;
+# change pndaspect  in icepack_in
+    sed -i "69c      pndaspect         = ${pndaspect_list[$i]} " ./icepack_in ;
+# change integration time  in icepack_in
+    sed -i "7c      npt            = 192 " ./icepack_in ;
+# run
+    ./automatic_formalrun ;
+    ./automatic_query_data
+# rename ap_g.txt and hp_g.txt
+    let ii=$i+1 ;
+    mv ap_g.txt ap_g"$ii".txt ;
+    mv hp_g.txt hp_g"$ii".txt ;
+    mv sea_ice_concentration.txt sea_ice_concentration"$ii".txt ;
+    mv icethickness.txt icethickness"$ii".txt ;
+# send ap_g.txt and hp_g.txt
+    sz ap_g"$ii".txt ;
+    sz hp_g"$ii".txt ;
+    sz sea_ice_concentration"$ii".txt ;
+    sz icethickness"$ii".txt ;
+
+done
+# End loops 
+
+let i=17
+
+# change ic in icepack_in
+    sed -i "9c      ice_ic         = './restart/iced.2005-"${datelist[$i]}"-00000' " ./icepack_in;
+# change pndaspect  in icepack_in
+    sed -i "69c      pndaspect         = ${pndaspect_list[$i]} " ./icepack_in ;
+# change integration time  in icepack_in
+    sed -i "7c      npt            = 2424 " ./icepack_in ;
+# run
+    ./automatic_formalrun ;
+    ./automatic_query_data
+# rename ap_g.txt and hp_g.txt
+    let ii=$i+1 ;
+    mv ap_g.txt ap_g"$ii".txt ;
+    mv hp_g.txt hp_g"$ii".txt ;
+    mv sea_ice_concentration.txt sea_ice_concentration"$ii".txt ;
+    mv icethickness.txt icethickness"$ii".txt ;
+# send ap_g.txt and hp_g.txt
+    sz ap_g"$ii".txt ;
+    sz hp_g"$ii".txt ;
+    sz sea_ice_concentration"$ii".txt ;
+    sz icethickness"$ii".txt ;
